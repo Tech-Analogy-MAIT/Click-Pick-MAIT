@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLANTit | CONTACT</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta name="description" content="PLANTit was made by freshmen at MAIT, Delhi to... ">
+    <meta name="robots" content="INDEX, FOLLOW">
+    <meta name="keywords" content="plantit, PLANTIT, PLANTit, PLANandPLANT, Plan&Plant">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Roboto+Slab&display=swap');
+    </style>
+    <script src="action.js"></script>
+    <!--    font-family: 'Merriweather', serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto Slab', serif;      -->
+</head>
+
+<body>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="messagesent" id="messagesent" role="alert">
+        <strong> {{message}} </strong>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+
+    <form method= "post" action="/order/">
+        {% csrf_token %}
+        <div>
+          ORDER: <input type="text" name="order" id=""
+              style="background-color:#c29dc3;font-weight: bold;font-size: 20px;border-radius: 10px;padding: 5px;"
+              placeholder="Enter your Order">
+        </div>
+        <br>
+        <div>
+         PRICE: <input type="text" name="price" id=""
+              style="background-color:#c29dc3;font-weight: bold;font-size: 20px;border-radius: 10px;padding: 5px;"
+             placeholder="Enter price of order">
+        </div>
+        <div>
+            <input type="checkbox" name="" id="contactcheckbox" checked>
+            <label for="contactcheckbox">Submit</label>
+            <br>
+            <input class="btn" type="submit" value="SUBMIT"
+                style="background-color: #a320a5;color: black;font-size:15px;font-weight: bold;border-radius: 10px;padding: 7px;margin: 20px;">
+        </div>
+      </form>
+    
+    
+
+
+
+
+
+</body>
+
+</html>
